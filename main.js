@@ -6,6 +6,7 @@ function preload(){
         game.load.image('background80', 'assets/Parallax80.png');
         game.load.image('background60', 'assets/Parallax60.png');
         game.load.image('fighter', 'assets/smalldrone.png');
+        game.load.image('ship', 'assets/ship.png');
 }
 var background;
 var midground;
