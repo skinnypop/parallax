@@ -7,11 +7,13 @@ function preload(){
         game.load.image('background60', 'assets/Parallax60.png');
         game.load.image('fighter', 'assets/smalldrone.png');
         game.load.image('ship', 'assets/ship.png');
+        game.load.image('planet', 'assets/planets/planet_apocalypse.png');
 }
 var background;
 var midground;
 var foreground;
 var player;
+var planet;
 var cursors;
 
 function create(){
@@ -20,6 +22,8 @@ function create(){
     background = game.add.tileSprite(0, 0, game.width, game.height, 'background100');
     midground = game.add.tileSprite(0, 0, game.width, game.height, 'background80');
     foreground = game.add.tileSprite(0, 0, game.width, game.height, 'background60');
+
+    planet = game.add.sprite(0,-100,'planet');
 
     player = game.add.sprite(0, game.height - 150, 'fighter');
     player.scale.setTo(0.5, 0.5);
@@ -34,6 +38,8 @@ function update() {
     background.tilePosition.y += 0.05;
     midground.tilePosition.y += 0.3;
     foreground.tilePosition.y += 0.75;
+
+    planet.y += 0.75;
 
     player.body.velocity.x = 0;
     
