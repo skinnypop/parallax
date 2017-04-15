@@ -7,7 +7,8 @@ function preload(){
         game.load.image('background60', 'assets/Parallax60.png');
         game.load.image('fighter', 'assets/smalldrone.png');
         game.load.image('ship', 'assets/ship.png');
-        game.load.image('planet', 'assets/planets/planet_apocalypse.png');
+        game.load.image('planet_apoc', 'assets/planets/planet_apocalypse.png');
+        game.load.image('planet_orange', 'assets/panets/planet_orangesplat.png');
 }
 var background;
 var midground;
@@ -26,7 +27,8 @@ function create(){
     foreground = game.add.tileSprite(0, 0, game.width, game.height, 'background60');
 
     planets = game.add.group();
-    planet = planets.create(0,-100,'planet');
+    planet = planets.create(0,-100,'planet_apoc');
+    planet = planets.create(300, -50, 'planet_orange');
    
 
 
