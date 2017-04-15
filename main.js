@@ -13,18 +13,25 @@ var background;
 var midground;
 var foreground;
 var player;
+var planets;
 var planet;
 var cursors;
 
 function create(){
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
+    // Parallax backgrounds
     background = game.add.tileSprite(0, 0, game.width, game.height, 'background100');
     midground = game.add.tileSprite(0, 0, game.width, game.height, 'background80');
     foreground = game.add.tileSprite(0, 0, game.width, game.height, 'background60');
 
-    planet = game.add.sprite(0,-100,'planet');
+    planets = game.add.group();
+    planet = planets.create(0,-100,'planet');
+   
 
+
+
+    // Add spaceship
     player = game.add.sprite(0, game.height - 150, 'fighter');
     player.scale.setTo(0.5, 0.5);
     game.physics.arcade.enable(player);
